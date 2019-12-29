@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Snaacker</title>
+    <link>/</link>
+    <description>Recent content on Snaacker</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Dec 2019 00:23:14 +0100</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mở đầu gian nan</title>
+      <link>/posts/my-first-post/</link>
+      <pubDate>Sat, 28 Dec 2019 00:23:14 +0100</pubDate>
+      
+      <guid>/posts/my-first-post/</guid>
+      <description>Mấy chữ
+Vạn sự khởi đầu nan Gian nan đừng vội nản Thế là được.
+Karlskrona, 2019</description>
+    </item>
+    
+    <item>
+      <title>Huy Tran</title>
+      <link>/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resume/</guid>
+      <description>Contact Email: snaacker.hn@gmail.com
+Skype: quanghuyvn.87
+Phone: +46 76417-1682
+Education  Hanoi University of Technology (2005 - 2010) Training course (2015) Seven habits of highly effective peoples (2017)  Technical Skills Programming languages: Java(Expert), Golang(Good), Python(Good), JS(Basic)
+Database: Oracle, MySQL, PostgreSQL, SQL Server
+Application Server: Nginx, Apache Tomcat, Weblogic, Websphere, JBoss
+DevOps tools: Docker, Vagrant, Virtual Box, Jenkins, TeamCity, SonarQube, Git, Jira
+Methodologies: Scrum, Agile, TDD, DDD
+Certificates  Oracle Database 11g Administrator Certified Associate Oracle Certified Professional, Java SE 6 Programmer  Projects Java Developer | 2019/05 – Present | Ericsson | Karlskrona, Sweden Maintainance and develop tools and environment</description>
+    </item>
+    
+    <item>
+      <title>Me - Snaacker</title>
+      <link>/me/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/me/</guid>
+      <description>A simple developer, tiny dreamer and a funny lover in this big big world
+Where I&#39;m from? Currently, I&#39;m living in Karlskrona, Sweden for now, but I&#39;m from Hanoi, capital of Vietnam. It&#39;s an old city, with little bit dusty and noisy. However, you will love it, I&#39;m sure!
+What am I doing for now? I&#39;m a tech lover, and want focus my hundred percent effort in making things. I used to working for big big company, but now I&#39;m just an engineer in small startup.</description>
+    </item>
+    
+  </channel>
+</rss>
