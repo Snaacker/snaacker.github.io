@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Snaacker</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Dec 2019 00:23:14 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jan 2020 11:03:14 +0100</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Chúc mừng năm mới</title>
+      <link>/posts/happy-new-year/</link>
+      <pubDate>Wed, 01 Jan 2020 11:03:14 +0100</pubDate>
+      
+      <guid>/posts/happy-new-year/</guid>
+      <description>Chúc mừng năm mới 2020! Một thập kỷ mới thế là đã bắt đầu, vận hội mới, cơ hội mới đã đến. Năm mới tốt lành đến tất cả mọi người :) 
+Karlskrona, 2019</description>
+    </item>
     
     <item>
       <title>Mở đầu gian nan</title>
