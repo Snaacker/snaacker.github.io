@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Snaacker</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jan 2020 11:03:14 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jan 2020 09:49:38 +0100</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>What is DevOps - DevOps là gì</title>
+      <link>/posts/what-is-devops/</link>
+      <pubDate>Sun, 05 Jan 2020 09:49:38 +0100</pubDate>
+      
+      <guid>/posts/what-is-devops/</guid>
+      <description>Hôm vừa rồi lúc đi lấy nước, tớ thấy một thanh niên già đang bật màn hình có dòng chữ to đùng &amp;ldquo;What is DevOps?&amp;rdquo; (DevOps là cái gì?). Tớ tự bảo &amp;ldquo;Ồ, hoá ra bây giờ vẫn có những người không biết DevOps là gì&amp;rdquo;, vẫn biết đây là một vấn đề không mới, nhưng hay là cứ viết thử một bài viết về DevOps xem mình hiểu DevOps đến đâu.</description>
+    </item>
     
     <item>
       <title>Chúc mừng năm mới</title>

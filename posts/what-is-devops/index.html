@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Snaacker">
+    <meta name="description" content="Funny guy and Tech lover">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="What is DevOps - DevOps là gì"/>
+<meta name="twitter:description" content="Hôm vừa rồi lúc đi lấy nước, tớ thấy một thanh niên già đang bật màn hình có dòng chữ to đùng &ldquo;What is DevOps?&rdquo; (DevOps là cái gì?). Tớ tự bảo &ldquo;Ồ, hoá ra bây giờ vẫn có những người không biết DevOps là gì&rdquo;, vẫn biết đây là một vấn đề không mới, nhưng hay là cứ viết thử một bài viết về DevOps xem mình hiểu DevOps đến đâu."/>
+
+    <meta property="og:title" content="What is DevOps - DevOps là gì" />
+<meta property="og:description" content="Hôm vừa rồi lúc đi lấy nước, tớ thấy một thanh niên già đang bật màn hình có dòng chữ to đùng &ldquo;What is DevOps?&rdquo; (DevOps là cái gì?). Tớ tự bảo &ldquo;Ồ, hoá ra bây giờ vẫn có những người không biết DevOps là gì&rdquo;, vẫn biết đây là một vấn đề không mới, nhưng hay là cứ viết thử một bài viết về DevOps xem mình hiểu DevOps đến đâu." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/what-is-devops/" />
+<meta property="article:published_time" content="2020-01-05T09:49:38+01:00" />
+<meta property="article:modified_time" content="2020-01-05T09:49:38+01:00" />
+
+
+    
+      <base href="/posts/what-is-devops/">
+    
+    <title>
+  What is DevOps - DevOps là gì · Snaacker
+</title>
+
+    
+      <link rel="canonical" href="/posts/what-is-devops/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.b0d3008da4a61117b253549e4ef3c1ff3bb767ecf7b232ef55a0ebbbb79783f8.css" integrity="sha256-sNMAjaSmEReyU1SeTvPB/zu3Z&#43;z3sjLvVaDru7eXg/g=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+      <link rel="stylesheet" href="/css/custom.css" />
+    
+
+    
+    
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.62.0" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Snaacker
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/">Home</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/me/">Me</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/resume/">Resume</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">What is DevOps - DevOps là gì</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2020-01-05T09:49:38&#43;01:00'>
+                January 5, 2020
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              11 minutes read
+            </span>
+          </div>
+          
+          
+        </div>
+      </header>
+
+      <div>
+        <blockquote>
+<p><strong>Hôm vừa rồi lúc đi lấy nước, tớ thấy một thanh niên già đang bật màn hình có dòng chữ to đùng &ldquo;What is DevOps?&rdquo; (DevOps là cái gì?). Tớ tự bảo &ldquo;Ồ, hoá ra bây giờ vẫn có những người không biết DevOps là gì&rdquo;, vẫn biết đây là một vấn đề không mới, nhưng hay là cứ viết thử một bài viết về DevOps xem mình hiểu DevOps đến đâu.</strong><br>
+<strong>Cuối cùng thì, DevOps là cái gì, có tác dụng gì, tại sao lại cần DevOps và tại sao bỗng dưng DevOps trở thành một xu hướng được đón nhận một cách nhiệt tình còn DevOps Engineer bỗng nhiên trở thành những người có mức lương cao ngất ngưởng trên thị trường công nhân lập trình?</strong></p>
+</blockquote>
+<h3 id="1-devops-l-ci-g">1. DevOps là cái gì?</h3>
+<p><img src="https://snaacker-storage.s3.eu-north-1.amazonaws.com/DevOps-doubt.jpg#center" alt="alt text" title="What's DevOps"></p>
+<blockquote>
+<p>DevOps thực chất là một khái niệm rất chung chung, chỉ tất cả những hành động giúp đẩy nhanh quá trình deliver sản phẩm.</p>
+</blockquote>
+<p>Đấy, chỉ có nhiêu đó chữ vậy thôi, thế nên nó mới dễ khiến người ta bị lúng túng. Nhưng hãy thử nhớ lại quá khứ của 20 năm trước, khi mà hai khối Developer và Operator được phân tách độc lập, quá trình deliver sản phẩm nó khủng khiếp như thế nào nhé. <br>
+Đầu tiên, các ông Dev sẽ được cấp một môi trường phát triển, ở đây thường là một con máy trắng tinh, sau đó ông Dev sẽ tự cài đặt và cấu hình môi trường của mình, giở đủ các chiêu trò để anh em trong team có thể làm việc tiện lợi nhất. Có thể ví dụ như là cấp cho các quyền cao nhất, bỏ chọn các tính năng bảo mật, chúng tôi là Dev, chúng tôi không có thời gian cho những thứ xàm xí đó, việc của chúng tôi là code, chỉ code mà thôi&hellip;<br>
+Sau nửa năm code vỡ mặt (hoặc thậm chí lâu hơn nhiều), sau rất nhiều ngày OT và đôi khi là thay máu cả team, các ông Dev cuối cùng nặn xong được một cái gọi là phần mềm, có thể chạy được và có vẻ đủ tính năng để bàn giao cho khách hàng, việc tiếp theo là đóng gói và tống cái cục đó cho team Ops để cài đặt môi trường Staging (pre-production) cho team QA và Secu kiểm thử các chức năng và bảo mật. Đội Dev đã vất vả quá rồi, giờ là lúc Ops, QA và Secu vất vả thôi nhỉ. <br>
+<img src="https://snaacker-storage.s3.eu-north-1.amazonaws.com/workfine.jpg#center" alt="alt text" title="It's OK - Ship it"><br>
+Nỗi đau bắt đầu nhen nhóm ở thời điểm này khi các chiêu hèn kế bẩn lần lượt được lộ sáng. Các ông Ops sẽ đánh vật với cái đống gọi là code đó và giở đủ cách từ trao đổi chiêu thức cho tới cà khịa team Dev, tới yêu cầu hỗ trợ đặc biệt để cài cái đống kia lên một cái môi trường &ldquo;sạch&rdquo;. Sau khoảng 2 tuần OT (là ít) và cãi nhau từ trên mail đến đời thực, may mắn thay cái đống code kia cuối cùng cũng chịu yên vị trên môi trường Staging, team QA và Secu bắt đầu nhảy vào hấp diêm đống đó. Thường đây là giai đoạn đau khổ nhất trong các giai đoạn, vì chắc chắn sau một thời không dài test, sẽ có một cơ số bug/defect/&ldquo;feature&rdquo; được tìm thấy, thường cái số lượng này sẽ không ít, và các ông Dev sẽ phải ngồi lọ mọ sửa code của mình, sau đó đóng gói và chuyển cho các ông Ops để cập nhật. Cứ thế cái vòng luẩn quẩn khiến việc Deliver sản phẩm cực kỳ lâu và thiếu hiệu quả.</p>
+<blockquote>
+<p>Với các công nghệ mới giúp giữ được các state của application một cách hiệu quả như Docker, hay các khái niệm như CI/CD hay Infrastructure as Code (Ansible, Saltstack,&hellip;) Dev team giờ có thể chủ động xử lý các vấn đề về môi trường dễ dàng cùng với Ops team</p>
+</blockquote>
+<p>Với DevOps, nỗi đau tất nhiên vẫn còn, nhưng sẽ cố gắng được giảm đi nhiều nhất có thể, các vấn đề đều cố gắng được tìm thấy từ sớm nhất có thể. Có thể nói tới giải pháp đơn giản nhất là join tất cả các team vào trong tất cả các quá trình từ triển khai cho tới deploy và deliver code. Với các công nghệ mới giúp giữ được các state của application một cách hiệu quả như Docker, hay các khái niệm như CI/CD hay Infrastructure as Code (Ansible, Saltstack,&hellip;) Dev team giờ có thể chủ động xử lý các vấn đề về môi trường dễ dàng cùng với Ops team, khi có thay đổi hay cần rollback lại môi trường cũ việc triển khai cũng đơn giản với một vài dòng lệnh.
+Ngoài ra, việc join các team QA hay Sec vào từ các giai đoạn sớm giúp việc xác định lỗi hệ thống nhanh, và xử lý ngay lập tức không cần chờ đợi tốn thời gian và dễ dàng gây ra những bottle neck không cần thiết. <br>
+<img src="https://snaacker-storage.s3.eu-north-1.amazonaws.com/devops_funny.png#center" alt="alt text" title="DevOps"><br>
+Câu chuyện Deliver code của những năm 201x (khoảng từ 2011 trở đi) giờ đã khác rất nhiều, các team Dev sẽ phối hợp cùng team Ops sử dụng các phần mềm Configuration Manager (Ansible, SaltStack) hoặc Provisioning (VMW, Docker) để tạo nên các môi trường chuẩn, có thể tái sử dụng và cài đặt nhanh chóng. Và cả Dev lẫn Ops sẽ cùng làm việc với nhau ngay từ những ngày đầu tiên, khi thậm chí chưa có dòng code nào được viết để đảm bảo hệ thống sẽ sát với môi trường production nhất có thể. Sau một khoảng thời gian nhất định (thường là 2 tuần - đơn vị Sprint trong Scrum), Dev team sẽ deliver code lên môi trường Staging để team QA và Sec có thể bắt đầu kiểm thử luôn, quá trình này thường được chạy tự động để giảm bớt rủi ro. Ngay khi có bug hoặc defect của feature hoặc có vấn đề bảo mật được tìm thấy, Dev team sẽ sửa ngay trong Sprint tiếp theo, các quá trình này được lặp đi lặp lại cho tới khi sản phẩm đủ tốt để có thể deliver tới tay khách hàng. Các lỗi sẽ được tìm thấy sớm hơn, rất lâu trước khi chúng trở thành &ldquo;Rồng&rdquo; và quay lại đấm cho team Dev không trượt phát nào. Team QA, Sec cũng không bị phụ thuộc vào quá trình triển khai của Dev, không còn phải ngồi chơi dài dài trong vài tháng sau đó lại OT vỡ mặt như xưa mà luôn luôn có việc đều đặn để làm. Ops team thì liên tục kết nối với các team để đảm bảo môi trường luôn lành mạnh, dễ dàng triển khai sau 1 (hoặc vài lệnh), nếu cần thì có thể rollback sau vài nốt nhạc, việc deploy lên production cũng trở nên nhàn hạ vì đã được làm đi làm lại cả chục thậm chí cả trăm lần trước đó với tưng đó câu lệnh. Mọi người ai cũng hạnh phúc, và tất cả các team sống hạnh phúc với nhau mãi mãi&hellip;</p>
+<blockquote>
+<p>Nếu Agile là mục tiêu mà đội ngũ phát triển phần mềm muốn hướng tới, thì DevOps là một trong những phương thức cần thiết để thực hiện mục tiêu đó.</p>
+</blockquote>
+<p>Nói tới đây, tớ thấy rất nhiều người thấy có sự tương đồng giữa DevOps và Agile, quả thực thì DevOps được định nghĩa như một quá trình hỗ trợ cho phương thức làm việc Agile hoặc nói ngược lại Agile là cái đích mà rất cần DevOps ở trong đó. Nếu Agile là mục tiêu mà đội ngũ phát triển phần mềm muốn hướng tới, thì DevOps là một trong những phương thức cần thiết để thực hiện mục tiêu đó.<br>
+Vậy chốt lại, khái niệm DevOps rất trừu tượng, việc cho 1 ông Ops chuyên ngồi làm cùng team ông Dev để cải thiện việc deploy cũng là DevOps, việc tạo 1 cái script giúp deploy nhanh hơn và an toàn hơn cũng có thể coi là DevOps, việc ông QA và Secu test ra lỗi ngay sau khi ông Dev vừa deploy lên Staging cũng là DevOps, việc ông Dev ngồi chơi điện tử trong lúc chờ đón vợ cũng là DevOps&hellip; À, việc này thì chắc là không phải, mình đùa thôi. Nhưng DevOps có thể coi là một văn hoá, nơi ở đó tất cả mọi người tham gia vào quá trình xây dựng sản phẩm đều có mục đích là cải thiện quy trình deliver sản phẩm.<br>
+<img src="https://snaacker-storage.s3.eu-north-1.amazonaws.com/devops-funny.jpg#center" alt="alt text" title="It's OK - Ship it">
+Vậy hãy an tâm là bạn đã thực hiện DevOps nếu bạn luôn có hành động và suy nghĩ liên quan tới cải tiến quy trình làm sản phẩm nhé.</p>
+<h3 id="2-hiu-qu-khi-s-dng-devops">2. Hiệu quả khi sử dụng DevOps</h3>
+<p>Thực tế thì DevOps đã được các công ty áp dụng từ lâu một cách&hellip; vô thức, chẳng hạn xưa xửa xừa xưa đã có vụ viết bash script để automate quá trình deploy sản phẩm, hay áp dụng Kaizen để cải thiện quy trình liên tục,&hellip; Nhưng ở thời điểm trước 2011, khi Docker chưa được sinh ra, các giải pháp về CI/CD chưa thực sự hiệu quả thì những cố gắng này không thay đổi nhiều quy trình làm việc cũng như kết quả cuối cùng.<br>
+Tuy nhiên khi khái niệm về triển khai trên Cloud ngày một thịnh hành, cộng với việc chuyển sang sử dụng microservices, việc cập nhật feature mới được yêu cầu liên tục thì DevOps trở thành một phần cực kỳ quan trọng để đảm bảo chất lượng, sự ổn định của sản phẩm.<br>
+Nếu tính trên số lượt deploy để thể hiện độ khủng khiếp khi áp dụng DevOps, ta thấy các công ty công nghệ như Amazon hay Facebook quả thực đã có những thành quả thật đáng ngưỡng mộ.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">- Amazon: Deploy sau mỗi 11.7 giây 
+- Netflix: Khoảng vài nghìn lần 1 ngày
+- Facebook: 2 tuần 1 lần (rất khủng khiếp nếu tính đến số lượng người dùng khổng lồ của FB)   
+</code></pre></div><p>Nói riêng về Walmart và bet365 vì đây là 2 khách hàng mà công ty cũ của mình có triển khai hệ thống cho họ, cả 2 đều là những người khổng lồ trong ngành của mình (Walmart thì là bán lẻ còn bet365 là cá cược). Việc đảm bảo hệ thống chạy ổn định là ưu tiên số một của họ, tiếp theo đó là khả năng scale tốt cũng như cập nhật tính năng liên tục để đuổi kịp hoặc vượt lên đối thủ. 2 công ty đều tròm trèm deploy khoảng vài nghìn lần 1 ngày, và workflow deploy thì nhìn như bản thiết kế sân vận động vậy. Nhưng hiệu quả sau khi triển khai sản phẩm DevOps thì thấy rõ, sau rất nhiều chông gai trong quá trình triển khai thì các quá trình deploy và upgrade sản phẩm của cả 2 công ty được thực hiện liên tục và an toàn. Phải nói mình rất tự hào vì là một phần của team đã làm nên sản phẩm này (link về công ty và sản phẩm mình để ở phía cuối).</p>
+<blockquote>
+<p>DevOps là văn hoá, nó cần được tất cả các thành viên trong công ty hiểu và cùng triển khai, chứ không phải là chỉ dồn vô tội vạ vào đầu một vài người có &ldquo;kinh nghiệm&rdquo; về triển khai automation delivery.</p>
+</blockquote>
+<p>Với trải nghiệm thực tế của mình, việc áp dụng DevOps giúp cho những lần deploy hệ thống của cả công ty trở nên dễ thở vô cùng cũng như những lần release cho khách hàng được an toàn hơn hẳn. Trước mỗi lần demo sản phẩm cuối sprint, chị em team QA chỉ phải kéo thả vài bước là hệ thống sẽ được deploy sau vài phút, nếu có vấn đề xảy ra, chỉ việc rollback lại với 1 click. Hay khi release sản phẩm chỉ cần click vào nút Release trên Jira, và đi về đi ngủ vì code đã được test cẩn thận cả về feature và bảo mật, còn package thì luôn luôn có sẵn trên Artifact server.   <br>
+<img src="https://sdtimes.com/wp-content/uploads/2016/08/0825.sdt-news.jpg#center" alt="alt text" title="Automic Release process"></p>
+<p>Cũng vì tính hiệu quả của các DevOps Engineer mang lại, các công ty vì thế bắt đầu một cuộc chạy đua vũ trang để gặt các ông kỹ sư DevOps về chỗ mình và đây chính là khởi đầu cho việc lương của DevOps Engineer được boost một cách&hellip; vô lý. Với mình đây là việc không cần thiết, vì vốn dĩ theo mình DevOps là văn hoá, nó cần được tất cả các thành viên trong công ty hiểu và cùng triển khai, chứ không phải là chỉ dồn vô tội vạ vào đầu một vài người có &ldquo;kinh nghiệm&rdquo; về triển khai automation delivery.</p>
+<h3 id="kt-lun">Kết luận</h3>
+<p>Dẫu rằng cơn sốt về DevOps đã qua khá lâu (khoảng 2015, 2016), nhưng cho tới giờ, nếu nói về DevOps, chắc nói cả ngày cũng không hết được và đây vẫn là một topic rất hot, và vẫn đáng để tìm hiểu sâu. Bản thân mình cũng có nghiên cứu và có may mắn được trải nghiệm môi trường DevOps trong quá khứ, nhưng nếu dám nói tự tin 100% về DevOps thì chắc là chưa dám đâu.<br>
+Cuối cùng, nếu bạn là người mới bắt đầu với DevOps và vẫn mông lung về việc DevOps là gì, mình suggest các bạn đọc quyển Phonenix Project hay DevOps handbook để có những định nghĩa cơ bản về DevOps.<br>
+Happy coding! :)</p>
+
+      </div>
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+     © 2020
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>
