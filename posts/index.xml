@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Snaacker</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Jan 2020 09:49:38 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jan 2020 07:26:47 +0100</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dọn dẹp Docker Private Registry với API</title>
+      <link>/posts/clear-registry/</link>
+      <pubDate>Sun, 19 Jan 2020 07:26:47 +0100</pubDate>
+      
+      <guid>/posts/clear-registry/</guid>
+      <description>Đợt này công ty tớ triển khai chuyển dần sang sử dụng Kubernetes để build và test, quá trình chuyển sang sử dụng Kubernetes thì vẫn còn nhiều gian nan lắm nhưng bước đầu cũng có những thành công nhất định. Mỗi tội thành công đó là thành công của team Dev vì đã chuyển sang K8s kịp thời gian, còn team DevOps của tớ thì lúc nào cũng vắt chân lên cổ chạy đằng theo sau để phục vụ.</description>
+    </item>
     
     <item>
       <title>What is DevOps - DevOps là gì</title>

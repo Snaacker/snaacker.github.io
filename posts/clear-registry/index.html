@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Snaacker">
+    <meta name="description" content="Funny guy and Tech lover">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Dọn dẹp Docker Private Registry với API"/>
+<meta name="twitter:description" content="Đợt này công ty tớ triển khai chuyển dần sang sử dụng Kubernetes để build và test, quá trình chuyển sang sử dụng Kubernetes thì vẫn còn nhiều gian nan lắm nhưng bước đầu cũng có những thành công nhất định. Mỗi tội thành công đó là thành công của team Dev vì đã chuyển sang K8s kịp thời gian, còn team DevOps của tớ thì lúc nào cũng vắt chân lên cổ chạy đằng theo sau để phục vụ."/>
+
+    <meta property="og:title" content="Dọn dẹp Docker Private Registry với API" />
+<meta property="og:description" content="Đợt này công ty tớ triển khai chuyển dần sang sử dụng Kubernetes để build và test, quá trình chuyển sang sử dụng Kubernetes thì vẫn còn nhiều gian nan lắm nhưng bước đầu cũng có những thành công nhất định. Mỗi tội thành công đó là thành công của team Dev vì đã chuyển sang K8s kịp thời gian, còn team DevOps của tớ thì lúc nào cũng vắt chân lên cổ chạy đằng theo sau để phục vụ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/clear-registry/" />
+<meta property="article:published_time" content="2020-01-19T07:26:47+01:00" />
+<meta property="article:modified_time" content="2020-01-19T07:26:47+01:00" />
+
+
+    
+      <base href="/posts/clear-registry/">
+    
+    <title>
+  Dọn dẹp Docker Private Registry với API · Snaacker
+</title>
+
+    
+      <link rel="canonical" href="/posts/clear-registry/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.b0d3008da4a61117b253549e4ef3c1ff3bb767ecf7b232ef55a0ebbbb79783f8.css" integrity="sha256-sNMAjaSmEReyU1SeTvPB/zu3Z&#43;z3sjLvVaDru7eXg/g=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+      <link rel="stylesheet" href="/css/custom.css" />
+    
+
+    
+    
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.62.0" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Snaacker
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/">Home</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/me/">Me</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/resume/">Resume</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Dọn dẹp Docker Private Registry với API</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2020-01-19T07:26:47&#43;01:00'>
+                January 19, 2020
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              3 minutes read
+            </span>
+          </div>
+          
+          
+        </div>
+      </header>
+
+      <div>
+        <hr>
+<p>Đợt này công ty tớ triển khai chuyển dần sang sử dụng Kubernetes để build và test, quá trình chuyển sang sử dụng Kubernetes thì vẫn còn nhiều gian nan lắm nhưng bước đầu cũng có những thành công nhất định. Mỗi tội thành công đó là thành công của team Dev vì đã chuyển sang K8s kịp thời gian, còn team DevOps của tớ thì lúc nào cũng vắt chân lên cổ chạy đằng theo sau để phục vụ. Nguyên nhân thì tính sau, nhưng hệ quả là có những task được ra đời kiểu on fly vì chẳng ai lúc làm để ý, dọn dẹp Docker Private Registry là một task như vậy.<br>
+<img src="https://snaacker-storage.s3.eu-north-1.amazonaws.com/snaacker.com/firefighter.jpg#center" alt="alt text" title="We use K8s, b*tch"></p>
+<p>Câu chuyện bắt đầu với việc bọn tớ dụng xong K8s cho team Devs deploy code, trong đó bao gồm 1 Private Registry chứa các image của sản phẩm trong quá trình build. Server được setup thuộc dạng&hellip; Monster, với 64 GB RAM, 4vCPU và 200GB ổ cứng, bọn tớ yên tâm sẽ được yên ổn trong một thời gian dài. Nhưng chỉ sau 2 tuần, với các developer nhiệt tình với công việc hết nức thì ổ cứng đã gần đầy, thế là 300GB được thêm vào để phục vụ cho cái sự lười của bọn tớ (hoặc đúng hơn là vì lúc đó đang có task quan trọng hơn phải làm).</p>
+<blockquote>
+<p>Nhưng không, ổ cứng lần này thậm chí đầy chỉ trong 1 tuần&hellip; Cạn lời với các bạn Dev, chăm làm đến thế là cùng.</p>
+</blockquote>
+<p>Lần này tớ hi vọng server sẽ ổn trong 2 tuần nữa để chờ mấy thằng đồng nghiệp quay trở lại sau kỳ nghỉ lễ cũng như tớ làm xong cái epic sida kia. Nhưng không, ổ cứng lần này thậm chí đầy chỉ trong 1 tuần&hellip; Cạn lời với các bạn Dev, chăm làm đến thế là cùng.<br>
+Phải dọn con Private Registry thôi, vậy có bao nhiêu cách để dọn Private Registry?<br>
+Có 2 cách để dọn Private Registry, sử dụng API và xoá tay. Do tớ chưa hardcore tới độ dám xoá tay nên cuối cùng chọn sử dụng API.<br>
+Đầu tiên phải kiểm tra xem trong cái Private Registry đấy mình có bao nhiêu image có thể xử lý, vào Chrome và access đến URL sau</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">https://username 334:password/domainname.com/V2/_catalog
+</code></pre></div><p>Sau khi định vị được image cần xoá thì sử dụng Postman để xoá image với URL sau dùng DELETE method</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">http://registryhost:reigstryport/v2/${docker_image_name}/manifests/${digest}
+</code></pre></div><p>Cũng có thể chơi thẳng lệnh curl cho máu</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">curl -v -X DELETE http://registryhost:reigstryport/v2/${docker_image_name}/manifests/${digest}
+</code></pre></div><p><strong>NOTE</strong>: để sử dụng được mấy cái API này thì trong quá trình start Registry bạn phải truyền parameter REGISTRY_STORAGE_DELETE_ENABLED=true. Nếu không thì xin lỗi, chỉ có cách recreate cái Container sida đó mới giúp bạn thoát thân với nỗi đau về ổ cứng, Docker không chấp nhận thay đổi state của Container on the fly đâu (ahuhu). Thật là tai hại&hellip;</p>
+<p>Nói thêm về vụ xoá image của mình, tớ phải sử dụng sự hỗ trợ từ người thân tên là Github vì lượng image cần xoá quá khủng, nếu ngồi dùng CURL chắc tớ hết đường về với vợ con. Cụ thể tớ sử dụng tool của thanh niên sau <code>https://github.com/andrey-pohilko/registry-cli</code>, sau đó lên Jenkins tạo 1 cái job nhỏ nhỏ với command</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> docker run --rm  anoxis/registry-cli -r https://[REGISTRY_URL]:5000 -i [image name] --dry-run --delete-by-hours 72
+</code></pre></div><p>Set cho cái job chạy hàng đêm, thế là yên tâm ngồi rung đùi và sáng ngủ dậy thấy tất cả những image hơn 3 ngày tuổi được yên tâm tống vào sọt rác :D.<br>
+<img src="https://snaacker-storage.s3.eu-north-1.amazonaws.com/snaacker.com/register/gone.jpg#center" alt="alt text" title="And it's gone"></p>
+<p>Happy clearing! :)</p>
+<p><strong>PS</strong>: Khi nào rảnh sẽ viết một bài ngắn ngắn về xoá bằng tay sử dụng folder vì sẽ có những trường hợp bắt buộc phải làm vậy :(.</p>
+
+      </div>
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+     © 2020
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>
